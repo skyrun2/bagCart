@@ -216,4 +216,4 @@ const SearchModal: React.FC<SearchModalProps> = ({
   );
 };
 
-export default SearchModal;
+// export default SearchModal;

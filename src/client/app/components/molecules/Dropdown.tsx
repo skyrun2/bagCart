@@ -55,9 +55,9 @@ const Dropdown: React.FC<DropdownProps> = ({
       <div
         ref={buttonRef}
         className={`flex items-center justify-between px-3 py-2 
-          rounded-lg bg-white border border-gray-200
-          transition-all duration-200 cursor-pointer 
-          hover:border-gray-300 focus:ring-2 focus:ring-blue-100 ${className}`}
+          rounded-2 bg-transparent 
+          transition-all duration-200 cursor-pointer green-input 
+            ${className}`}
         onClick={() => setIsOpen((prev) => !prev)}
         aria-disabled={disabled}
       >
@@ -95,7 +95,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.1 }}
-            className="absolute mt-1 bg-white border border-gray-100 rounded-lg shadow-lg z-10 overflow-hidden"
+            className="absolute mt-1 bg-card border border-textDark rounded-lg shadow-lg z-10 overflow-hidden"
             style={{ width: dropdownWidth || "auto" }}
           >
             <ul className="max-h-60 overflow-auto py-1">
@@ -103,11 +103,11 @@ const Dropdown: React.FC<DropdownProps> = ({
                 <li
                   key={option.value}
                   className={`px-3 py-2 text-sm transition-colors duration-150
-                    cursor-pointer hover:bg-gray-50 
+                    cursor-pointer green-input
                     ${
                       value === option.value
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-700"
+                        ? " text-emigreen/60"
+                        : "text-textDark"
                     }`}
                   onClick={() => handleSelect(option.value)}
                 >

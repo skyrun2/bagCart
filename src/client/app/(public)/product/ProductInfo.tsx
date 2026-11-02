@@ -121,18 +121,18 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
   return (
     <div className="flex flex-col gap-6 px-4 sm:px-6 py-6">
       {/* Product Name */}
-      <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">
+      <h1 className="text-xl sm:text-2xl font-semibold text-emigreen/60">
         {name}
       </h1>
 
       {/* Rating and Stock */}
-      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+      <div className="flex items-center gap-2 text-xs sm:text-sm text-textDark">
         <Rating rating={averageRating} />
         <span>({reviewCount || 0} reviews)</span>
         <span
           className={`ml-2 px-2 py-1 rounded text-xs font-medium ${
             stock > 0
-              ? "bg-indigo-100 text-indigo-600"
+              ? " text-emigreen"
               : "bg-red-100 text-red-600"
           }`}
         >
@@ -141,7 +141,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
       </div>
 
       {/* Price */}
-      <div className="text-2xl sm:text-3xl font-bold text-gray-900">
+      <div className="text-xl sm:text-2xl font-bold font-mono text-emigreen/60">
         ${price.toFixed(2)}
       </div>
 
@@ -149,7 +149,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
       <div className="space-y-3">
         {colorValues.size > 0 && (
           <div className="flex items-center gap-2">
-            <Palette className="w-4 h-4 text-gray-500" />
+            <Palette className="w-4 h-4 text-emigreen" />
             <span className="text-gray-600 text-sm">
               Available in {colorValues.size}{" "}
               {colorValues.size === 1 ? "color" : "colors"}
@@ -351,8 +351,8 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
 
       {/* Description */}
       <div className="space-y-3">
-        <h3 className="text-lg font-semibold text-gray-900">Description</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+        <h3 className="text-lg font-semibold text-emigreen/60">Description</h3>
+        <p className="text-textDark text-sm leading-relaxed">{description}</p>
       </div>
 
       {/* Action Buttons */}
@@ -363,7 +363,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
           className={`w-full py-3 sm:py-4 text-sm sm:text-base font-semibold text-white rounded-xl transition-all duration-300 ${
             isLoading || !stock || !selectedVariant
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-indigo-600 hover:bg-indigo-700 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+              : "bg-emigreen hover:bg-emigreen/60 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
           }`}
         >
           {isLoading ? (
@@ -381,7 +381,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
           disabled={!stock || !selectedVariant}
           className={`w-full py-3 sm:py-4 text-sm sm:text-base font-semibold border-2 rounded-xl transition-all duration-300 ${
             stock && selectedVariant
-              ? "border-indigo-600 text-indigo-600 hover:bg-indigo-50 hover:shadow-lg transform hover:scale-[1.02]"
+              ? "border-emigreen text-white hover:bg-emigreen/60 hover:shadow-lg transform hover:scale-[1.02]"
               : "border-gray-300 text-gray-400 cursor-not-allowed"
           }`}
         >

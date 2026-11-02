@@ -20,7 +20,7 @@ const BreadCrumb: React.FC = () => {
         </li>
 
         {pathSegments.map((segment, index) => {
-          const href = "/" + pathSegments.slice(0, index + 1).join("/");
+          const href = "/shop";
           const isLast = index === pathSegments.length - 1;
 
           return (

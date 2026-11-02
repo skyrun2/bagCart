@@ -9,7 +9,7 @@ interface RatingProps {
 const Rating: React.FC<RatingProps> = ({ rating }) => {
   return (
     <div className="flex">
-      {Array.from({ length: 5 }, (_, index) => (
+      {/* {Array.from({ length: 5 }, (_, index) => (
         <span
           key={index}
           className={`text-yellow-500 text-[21px] ${
@@ -18,7 +18,8 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
         >
           ★
         </span>
-      ))}
+      ))} */}
+      <span className="text-emigreen text-[13px]">★ {rating}</span>
     </div>
   );
 };

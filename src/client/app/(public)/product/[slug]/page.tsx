@@ -99,8 +99,8 @@ const ProductDetailsPage = () => {
 
   return (
     <MainLayout isDemoCatalog={isDemoCatalog}>
-      <div className="min-h-screen bg-gray-50">
-        <div className="bg-white border-b border-gray-200">
+      <div className="min-h-screen bg-dark">
+        <div className=" ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <BreadCrumb />
           </div>
@@ -108,7 +108,7 @@ const ProductDetailsPage = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-card h-fit rounded-2xl shadow-sm border border-white/10 overflow-hidden">
               <ProductImageGallery
                 images={product.variants.flatMap((v) => v.images)}
                 defaultImage={
@@ -120,7 +120,7 @@ const ProductDetailsPage = () => {
               />
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+            <div className=" rounded-2xl shadow-sm border border-white/10">
               <ProductInfo
                 id={product.id}
                 name={product.name}
@@ -139,7 +139,7 @@ const ProductDetailsPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+          <div className="  shadow-sm ">
             <ProductReviews reviews={product.reviews} productId={product.id} />
           </div>
         </div>

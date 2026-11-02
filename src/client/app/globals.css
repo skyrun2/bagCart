@@ -9,7 +9,12 @@
   /* Tan */
   --color-accent: #8f9779;
   /* Artichoke */
-  --color-background: #f8f8f8dd;
+  /* --color-background: #f8f8f8dd; */
+  --color-background: lab(2.51107% .242703 -.886115);
+  --color-dark-gradient:  linear-gradient(to bottom right in oklab,
+                      oklch(85% 0.035 115) 0%,
+                      oklch(92% 0.025 115) 50%,
+                      oklch(88% 0.03 115) 100%);
   --color-text: #2e2e2e;
 
   /* Aliases for convenience */
@@ -24,6 +29,23 @@
   /* Text contrast helpers */
   --lightText: #f5f3f3;
   --darkText: #283618;
+  --emeraldText: #00d492;
+  --emeraldTextHover:  color-mix(in oklab, var(--color-emerald-500) 30%, transparent);
+  --textDark:lab(47.8878% 1.65477 -5.77283);
+}
+
+@theme {
+  --color-card: var(--color-background);
+  --color-emigreen: var(--emeraldText);
+  --color-emigreen-hov: var(--emeraldTextHover);
+  --color-textDark: var(--textDark);
+  --color-darkGrad: var(--color-dark-gradient)
+}
+
+@layer components {
+  .green-input {
+    @apply outline-none hover:border-l hover:border-l-3 hover:border-l-emigreen focus:border-l focus:border-l-3 focus:border-l-emigreen active:border-l active:border-l-3 active:border-l-emigreen;
+  }
 }
 
 body {

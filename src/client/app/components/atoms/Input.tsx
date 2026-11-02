@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
             {...field}
             type={type}
             placeholder={placeholder}
-            className={`p-[14px] pl-3 pr-10 w-full border-b-2 border-gray-300 text-gray-800 placeholder:text-gray-600 mt-[6px] 
+            className={`p-[14px] pl-3 pr-10 w-full border-b-2 border-gray-600/10 text-gray-800  mt-[6px] 
               focus:outline-none focus:border-gray-700 ${className}`}
             onChange={(e) => {
               field.onChange(e);

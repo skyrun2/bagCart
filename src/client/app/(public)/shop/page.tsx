@@ -79,12 +79,12 @@ const ShopPage: React.FC = () => {
 
   return (
     <MainLayout isDemoCatalog={isDemoCatalog}>
-      <div className="min-h-screen">
-        <div className="sticky top-0 z-30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="min  w-full h-fit">
+        <div className=" top-0 z-30">
+          <div className="container mx-auto lg:px-2 py-4">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                <h1 className="text-2xl sm:text-3xl font-bold text-emigreen">
                   Shop
                 </h1>
                 <p className="text-sm text-gray-600 mt-1">
@@ -95,7 +95,7 @@ const ShopPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setFiltersVisible(!filtersVisible)}
-                  className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors shadow-sm"
+                  className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-emigreen text-white rounded-lg hover:bg-emigreen/60 transition-colors shadow-sm cursor-pointer"
                 >
                   <Filter size={18} />
                   <span className="font-medium">
@@ -125,7 +125,7 @@ const ShopPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="container w-full px-2 py-2">
           <div className="flex flex-col lg:flex-row gap-6">
             <AnimatePresence>
               {filtersVisible && (
@@ -210,11 +210,11 @@ const ShopPage: React.FC = () => {
               )}
 
               {error && (
-                <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                <div className="text-center py-16 rounded-2xl  shadow-sm">
                   <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Package size={32} className="text-red-500" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-emigreen/60 mb-2">
                     Error loading products
                   </h3>
                   <p className="text-gray-600 mb-6">
@@ -222,7 +222,7 @@ const ShopPage: React.FC = () => {
                   </p>
                   <button
                     onClick={() => window.location.reload()}
-                    className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                    className="bg-emigreen text-white px-6 py-3 rounded-lg hover:bg-emigreen/60 transition-colors font-medium"
                   >
                     Try Again
                   </button>
@@ -230,11 +230,11 @@ const ShopPage: React.FC = () => {
               )}
 
               {noProductsFound && (
-                <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Package size={32} className="text-gray-400" />
+                <div className="text-center py-16 rounded-2xl  shadow-sm">
+                  <div className="w-16 h-16  rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Package size={32} className="text-emigreen" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-emigreen/60 mb-2">
                     No products found
                   </h3>
                   <p className="text-gray-600 mb-6">
@@ -242,7 +242,7 @@ const ShopPage: React.FC = () => {
                   </p>
                   <button
                     onClick={handleReset}
-                    className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                    className="bg-emigreen text-white px-6 py-3 rounded-lg hover:bg-emigreen/60 transition-colors font-medium"
                   >
                     Clear All Filters
                   </button>
@@ -251,7 +251,7 @@ const ShopPage: React.FC = () => {
 
               {!noProductsFound && !loading && (
                 <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                  <div className="h-fit grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-scroll">
                     {displayedProducts.map(
                       (product: Product, index: number) => (
                         <motion.div

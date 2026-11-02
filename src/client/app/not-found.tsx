@@ -40,7 +40,7 @@ const NotFoundPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-darkGrad from-indigo-50 via-purple-50 to-blue-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -107,10 +107,10 @@ const NotFoundPage = () => {
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute inset-0 bg-indigo-500 rounded-full opacity-20"
+              className="absolute inset-0  rounded-full opacity-20"
             />
-            <div className="relative bg-white rounded-full p-8 shadow-lg border border-indigo-100 inline-block">
-              <span className="text-6xl md:text-8xl font-bold text-indigo-600">
+            <div className="relative  rounded-full p-8 shadow-lg inline-block">
+              <span className="text-6xl md:text-8xl font-bold text-emigreen">
                 404
               </span>
             </div>
@@ -124,10 +124,10 @@ const NotFoundPage = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-8"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-emigreen/50 mb-4">
             Page Not Found
           </h1>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-md mx-auto">
+          <p className=" text-textDark leading-relaxed max-w-md mx-auto">
             The page you&apos;re looking for doesn&apos;t exist. Let&apos;s help
             you find what you need.
           </p>
@@ -147,12 +147,12 @@ const NotFoundPage = () => {
                 placeholder="Search for products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border border-gray-200 rounded-xl p-4 pl-12 pr-4 text-gray-700 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 shadow-sm"
+                className="w-full bg-transparent rounded-2 p-4 pl-12 pr-4 text-white placeholder:text-textDark transition-all duration-200 shadow-sm green-input"
               />
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white" />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-emigreen hover:bg-emigreen/60 text-white px-4 py-2 rounded-lg transition-colors duration-200"
               >
                 Search
               </button>
@@ -167,7 +167,7 @@ const NotFoundPage = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-8"
         >
-          <h3 className="text-lg font-semibold text-gray-700 mb-4">
+          <h3 className="text-lg font-semibold text-emigreen/60 mb-4">
             Popular Categories
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
@@ -180,7 +180,7 @@ const NotFoundPage = () => {
               >
                 <Link
                   href={category.href}
-                  className="bg-white hover:bg-indigo-50 text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md border border-gray-200 hover:border-indigo-200"
+                  className="bg-white text-textDark hover:text-emigreen/60 font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md border border-gray-200 hover:border-indigo-200"
                 >
                   {category.name}
                 </Link>
@@ -199,7 +199,7 @@ const NotFoundPage = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => window.history.back()}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+              className="bg-emigreen hover:bg-emigreen/60 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
             >
               <ArrowLeft className="w-5 h-5" />
               Go Back
@@ -207,7 +207,7 @@ const NotFoundPage = () => {
 
             <Link
               href="/"
-              className="bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md border border-gray-200"
+              className="bg-white  text-textDark hover:text-emigreen/60 font-medium py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md border border-gray-200"
             >
               <Home className="w-5 h-5" />
               Go Home
@@ -222,8 +222,8 @@ const NotFoundPage = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-8"
         >
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-indigo-100">
-            <h3 className="text-lg font-semibold text-gray-700 mb-4">
+          <div className=" backdrop-blur-sm rounded-xl p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-emigreen/60 mb-4">
               Quick Navigation
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -236,12 +236,12 @@ const NotFoundPage = () => {
                 >
                   <Link
                     href={link.href}
-                    className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-indigo-50 transition-all duration-200 group"
-                  >
-                    <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center group-hover:bg-indigo-200 transition-colors duration-200">
-                      <link.icon className="w-4 h-4 text-indigo-600" />
+                    className="flex flex-col items-center gap-2 p-3 rounded-lg transition-all duration-200 group"
+                  > 
+                    <div className="w-8 h-8  rounded-lg flex items-center justify-center  transition-colors duration-200">
+                      <link.icon className="w-4 h-4 text-textDark group-hover:text-emigreen/60" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-indigo-600 transition-colors duration-200">
+                    <span className="text-sm font-medium text-textDark group-hover:text-emigreen/60 transition-colors duration-200">
                       {link.name}
                     </span>
                   </Link>
@@ -258,14 +258,14 @@ const NotFoundPage = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-6"
         >
-          <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-indigo-100">
+          <div className=" backdrop-blur-sm rounded-xl p-4 shadow-sm ">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Zap className="w-4 h-4 text-indigo-500" />
-              <span className="text-sm font-medium text-gray-700">
+              <Zap className="w-4 h-4 text-emigreen/60" />
+              <span className="text-sm font-medium text-emigreen/60">
                 Need help?
               </span>
             </div>
-            <p className="text-xs text-gray-500 leading-relaxed">
+            <p className="text-xs text-textDark  leading-relaxed">
               Contact our support team or check our help center for assistance
             </p>
           </div>

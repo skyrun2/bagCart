@@ -96,22 +96,22 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
   return (
     <aside
-      className={`bg-white rounded-xl shadow-sm border border-gray-100 ${
+      className={`pb-3 bg-card [&::-webkit-scrollbar]:hidden ${
         isMobile
-          ? "fixed inset-0 z-50 overflow-y-auto"
-          : "sticky top-24 h-fit max-h-[calc(100vh-120px)] overflow-y-auto"
+          ? "fixed inset-0 z-50 overflow-y-auto scroll-"
+          : "sticky top-24 h-fit max-h-[calc(100vh-120px)] overflow-y-auto "
       }`}
     >
       <form onSubmit={handleSubmit(onSubmit)} className="h-full flex flex-col">
         {/* Header */}
         <div
-          className={`flex items-center justify-between border-b border-gray-100 ${
+          className={`flex items-center justify-between  ${
             isMobile ? "p-4" : "p-6 pb-4"
           }`}
         >
-          <div className="flex items-center gap-3">
-            <SlidersHorizontal size={20} className="text-indigo-600" />
-            <h2 className="font-bold text-gray-900 text-lg">Filters</h2>
+          <div className="  flex items-center gap-3 " >
+            <SlidersHorizontal size={20} className="text-emigreen" />
+            <h2 className="font-bold text-emigreen/60 text-lg">Filters</h2>
             {activeFilterCount > 0 && (
               <span className="bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full px-2.5 py-1">
                 {activeFilterCount}
@@ -149,9 +149,9 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
         >
           {/* Search */}
           <div className="space-y-3">
-            <label className="text-sm font-semibold text-gray-800">
+            {/* <label className="text-sm font-semibold text-gray-800">
               Search Products
-            </label>
+            </label> */}
             <Controller
               name="search"
               control={control}
@@ -159,7 +159,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                 <input
                   type="text"
                   placeholder="Search products..."
-                  className="w-full border border-gray-200 rounded-xl p-3.5 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 bg-gray-50 focus:bg-white"
+                  className="w-full  rounded-2 p-3.5 text-sm   transition-all duration-200 bg-transparent placeholder:text-textDark text-white green-input"
                   {...field}
                   onChange={(e) => {
                     field.onChange(e);
@@ -172,9 +172,9 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
           {/* Category */}
           <div className="space-y-3">
-            <label className="text-sm font-semibold text-gray-800">
+            {/* <label className="text-sm font-semibold text-gray-800">
               Category
-            </label>
+            </label> */}
             <Controller
               name="categoryId"
               control={control}
@@ -183,7 +183,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                   options={categoryOptions}
                   value={field.value || ""}
                   onChange={(val) => field.onChange(val || undefined)}
-                  className="w-full"
+                  className="w-full bg-transparent"
                 />
               )}
             />
@@ -191,10 +191,10 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
           {/* Price Range */}
           <div className="space-y-3">
-            <label className="text-sm font-semibold text-gray-800">
+            <label className="text-sm font-semibold text-emigreen/60 font-mono">
               Price Range
             </label>
-            <div className="flex items-center space-x-3">
+            <div className="grid grid-cols-2 space-x-3">
               <Controller
                 name="minPrice"
                 control={control}
@@ -202,7 +202,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                   <input
                     type="number"
                     placeholder="Min"
-                    className="border border-gray-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 bg-gray-50 focus:bg-white w-1/2"
+                    className=" rounded-2 p-3 text-sm transition-all duration-200 placeholder:text-textDark text-white  green-input "
                     value={field.value || ""}
                     onChange={(e) =>
                       field.onChange(
@@ -219,7 +219,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                   <input
                     type="number"
                     placeholder="Max"
-                    className="border border-gray-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 bg-gray-50 focus:bg-white w-1/2"
+                    className="rounded-2 p-3 text-sm transition-all duration-200 placeholder:text-textDark text-white  green-input "
                     value={field.value || ""}
                     onChange={(e) =>
                       field.onChange(
@@ -234,11 +234,12 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
           {/* Product Flags */}
           <div className="space-y-4">
-            <label className="text-sm font-semibold text-gray-800">
+            <label className="text-sm font-semibold text-emigreen/60 font-mono">
               Product Status
             </label>
             <div className="space-y-4 pl-1">
-              <CheckBox name="isNew" control={control} label="New Arrivals" />
+              <CheckBox name="isNew" control={control} label="New Arrivals"
+              className="" />
               <CheckBox
                 name="isFeatured"
                 control={control}
@@ -260,13 +261,13 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
         {/* Apply Filters Button */}
         <div
-          className={`border-t border-gray-100 ${
+          className={` ${
             isMobile ? "p-4" : "p-6 pt-4"
           }`}
         >
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-3.5 rounded-xl hover:bg-indigo-700 transition-all duration-300 font-semibold shadow-sm hover:shadow-md"
+            className="w-full bg-emigreen text-white py-3.5 rounded-xl hover:bg-emigreen/60 transition-all duration-300 font-semibold shadow-sm hover:shadow-md"
           >
             Apply Filters
           </button>

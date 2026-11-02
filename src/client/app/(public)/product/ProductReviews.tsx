@@ -141,14 +141,14 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
   }
 
   return (
-    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+    <div className=" p-4 sm:p-6 rounded-lg shadow-sm">
       {/* Header */}
-      <div className="border-b border-gray-200 pb-3 mb-6">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 flex items-center">
-          <MessageSquare className="mr-2 text-indigo-600" size={20} />
+      <div className=" pb-3 mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-emigreen/60 flex items-center">
+          <MessageSquare className="mr-2 text-emigreen/60" size={20} />
           Customer Reviews
         </h2>
-        <p className="text-gray-600 text-xs sm:text-sm mt-1">
+        <p className="text-textDark text-xs sm:text-sm mt-1">
           {reviews.length} {reviews.length === 1 ? "review" : "reviews"} for
           this product
         </p>
@@ -156,7 +156,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
 
       {/* Rating Summary */}
       {reviews.length > 0 && (
-        <div className="bg-gray-50 rounded-lg p-4 sm:p-6 mb-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+        <div className=" p-4 sm:p-6 mb-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <div className="text-center">
             <div className="text-3xl sm:text-4xl font-semibold text-gray-800">
               {averageRating}
@@ -271,22 +271,22 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
           </form>
         </div>
       ) : (
-        <div className="bg-indigo-50 border border-indigo-100 rounded-lg p-4 mb-6 text-indigo-600 flex items-center text-xs sm:text-sm">
-          <AlertCircle size={16} className="mr-2" />
+        <div className=" rounded-lg p-4 mb-6 text-textDark flex items-center text-xs sm:text-sm">
+          <AlertCircle size={16} className="mr-2 text-emigreen/60" />
           Please log in to write a review.
         </div>
       )}
 
       {/* Reviews List */}
       <div className="space-y-4">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 flex items-center">
-          <User className="mr-2 text-indigo-600" size={18} />
+        <h3 className="text-base sm:text-lg font-semibold text-emigreen/60 mb-3 flex items-center">
+          <User className="mr-2 text-emigreen/60" size={18} />
           Customer Feedback
         </h3>
         {reviews.length === 0 ? (
-          <div className="text-center py-8 bg-gray-50 rounded-lg">
-            <MessageSquare size={32} className="mx-auto text-gray-400 mb-2" />
-            <p className="text-gray-600 text-xs sm:text-sm">
+          <div className="text-center py-8  ">
+            <MessageSquare size={32} className="mx-auto text-emigreen/60 mb-2" />
+            <p className="text-textDark text-xs sm:text-sm">
               No reviews yet. Be the first to share your thoughts!
             </p>
           </div>

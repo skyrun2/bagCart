@@ -22,7 +22,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
 }) => {
   if (error) {
     return (
-      <section className="py-8 sm:py-12 lg:py-16">
+      <section className="w-full py-8 sm:py-12 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="bg-red-50 border border-red-200 rounded-2xl p-8 max-w-md mx-auto">
@@ -63,8 +63,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
   }
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 ">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="product-section ">
         {showTitle && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -72,10 +71,14 @@ const ProductSection: React.FC<ProductSectionProps> = ({
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <h2 className="text-xl sm:text-[22px] font-semibold text-gray-900 capitalize">
-                {title}
-              </h2>
+            <div className="w-full py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="w-full  items-center justify-center flex flex-col gap-3">
+                <h2 className="text-4xl font-bold text-white tracking-tight">
+                  Our Collection
+                </h2>
+                <p className="w-full text-center text-textDark max-w-lg ">Limited early-access drops from our experimental labs. Delivered to your doorstep in hours, not days.</p>
+
+              </div>
               {products.length > 8 && (
                 <button
                   className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 sm:px-6 py-2 sm:py-3
@@ -102,14 +105,14 @@ const ProductSection: React.FC<ProductSectionProps> = ({
           </motion.div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-3 gap-4 sm:gap-4">
+        <div className=" w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 max-w-7xl mx-auto py-32">
           {products.map((product) => (
             <div key={product.id}>
               <ProductCard product={product} />
             </div>
           ))}
         </div>
-      </div>
+      
     </section>
   );
 };

@@ -16,13 +16,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 bg-gray-50 text-gray-600">
+    <footer className="border-t border-white/10 bg-dark text-textDark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <Link
               href="/"
-              className="text-lg font-semibold text-gray-900 hover:text-indigo-600"
+              className="text-lg font-semibold text-emigreen hover:text-emigreen/60 "
             >
               Ecommerce
             </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="hover:text-indigo-600 transition-colors"
+                    className="hover:text-emigreen/60 transition-colors"
                   >
                     {label}
                   </Link>
@@ -57,7 +57,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-sm">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-sm">
           <p>© {currentYear} Ecommerce. Open source under ISC.</p>
           <p>
             Developed by{" "}
@@ -65,7 +65,7 @@ const Footer = () => {
               href={DEVELOPER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-gray-900 hover:text-indigo-600"
+              className="font-medium text-textDark hover:text-emigreen/60"
             >
               Skyrun
             </a>

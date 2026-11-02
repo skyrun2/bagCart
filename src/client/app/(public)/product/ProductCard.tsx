@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { Eye } from "lucide-react";
+import { Eye, ShoppingCart } from "lucide-react";
 import { Product } from "@/app/types/productTypes";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,6 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     trackInteraction(product.id, "click");
     router.push(`/product/${product.slug}`);
   };
+  
 
   // Compute lowest price among in-stock variants
   const inStockVariants = product.variants.filter(
@@ -37,31 +38,30 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div
-      className="group bg-white rounded-sm border border-gray-100 overflow-hidden
-       relative h-full flex flex-col"
+      className="group relative pb-3 bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-emigreen-hov transition-all duration-500"
       onClick={handleClick}
     >
       {/* Image Container */}
-      <div className="relative w-full h-48 sm:h-[170px]  bg-gray-50 flex items-center justify-center overflow-hidden">
+      <div className="aspect-square overflow-hidden bg-zinc-900 relative block w-full">
         <Link href={`/product/${product.slug}`} className="block w-full h-full">
-          <Image
+          {/* <Image
             src={
               product.variants[0]?.images[0] ||
               generateProductPlaceholder(product.name)
             }
             alt={product.name}
-            width={240}
-            height={240}
-            className="object-contain mx-auto p-4"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 20vw"
+            // width={240}
+            // height={240}
+            // className="object-contain mx-auto p-4"
+            // sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 20vw"
             onError={(e) => {
               e.currentTarget.src = generateProductPlaceholder(product.name);
             }}
-          />
+          /> */}
         </Link>
 
         {/* Product Flags */}
-        <div className="absolute top-2 left-2 flex flex-col gap-1">
+        <div className="p-6 space-y-4">
           {product.isNew && (
             <span className="bg-green-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
               NEW
@@ -98,14 +98,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <div className="p-3 sm:p-4 lg:p-5 flex flex-col flex-grow">
         <Link href={`/product/${product.slug}`} className="block flex-grow">
-          <h3 className="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base mb-2 line-clamp-2 leading-tight">
+          <h3 className="font-semibold text-white text-xs sm:text-sm lg:text-base mb-2 truncate leading-tight">
             {product.name}
           </h3>
 
           <div className="flex items-center justify-between mb-2 sm:mb-3">
             <div className="flex items-center space-x-2">
               {inStockVariants.length > 0 ? (
-                <span className="text-indigo-700 font-bold text-sm sm:text-lg lg:text-xl">
+                <span  className="text-emigreen font-bold font-mono text-sm sm:text-base lg:text-lg">
                   ${lowestPrice.toFixed(2)}
                 </span>
               ) : (
@@ -116,35 +116,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
             <div className="flex items-center">
               <Rating rating={product.averageRating} />
-              {product.reviewCount > 0 && (
-                <span className="text-gray-500 text-xs lg:text-sm ml-1">
-                  ({product.reviewCount})
-                </span>
-              )}
             </div>
           </div>
-
-          {/* Category */}
-          {product.category && (
-            <div className="text-xs lg:text-sm text-gray-500 mb-2">
-              {product.category.name}
-            </div>
-          )}
         </Link>
-
-        {/* Quick Actions */}
-        <div className="mt-auto pt-2 sm:pt-3 border-t border-gray-100">
-          <button
-            className="w-full bg-indigo-600 text-white py-2 sm:py-2.5 lg:py-3 rounded-sm
-              font-medium text-xs sm:text-sm"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleClick();
-            }}
-          >
-            View Details
-          </button>
-        </div>
+        
       </div>
     </div>
   );

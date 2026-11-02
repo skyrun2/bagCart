@@ -13,13 +13,15 @@ export default function MainLayout({
   isDemoCatalog?: boolean;
 }) {
   const showCatalogBanner = isDemoCatalog && !isDemoMode();
+  console.log({showCatalogBanner});
+  
 
   return (
     <main className="flex flex-col min-h-screen w-full">
-      <Navbar />
-      <DemoModeBanner />
-      {showCatalogBanner && <DemoCatalogBanner />}
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:max-w-7xl xl:mx-auto">
+      <Navbar showCatalogBanner={showCatalogBanner} />
+      {/* <DemoModeBanner /> */}
+      
+      <div className="w-full  xl:max-w-7xl xl:mx-auto">
         {children}
       </div>
       <Footer />

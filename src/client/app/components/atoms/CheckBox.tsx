@@ -39,7 +39,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
         >
           <div
             className={`w-5 h-5 flex items-center justify-center border rounded-md transition-all ${
-              field.value ? "bg-primary border-primary" : "border-gray-400"
+              field.value ? "bg-emigreen/60 border-primary" : "border-gray-400"
             }`}
           >
             {field.value && (
@@ -49,7 +49,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
             )}
           </div>
           {label && (
-            <span className="text-gray-700 select-none font-medium">
+            <span className="text-emigreen/60 select-none font-medium">
               {label}
             </span>
           )}

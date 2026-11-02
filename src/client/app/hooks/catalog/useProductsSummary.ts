@@ -8,7 +8,8 @@ import { isDemoCatalogForced, shouldUseDemoCatalog } from "@/app/lib/catalog/dem
 
 export function useProductsSummary(first = 100) {
   const forceDemo = isDemoCatalogForced();
-
+  console.log({forceDemo});
+  
   const { data, loading, error } = useQuery(GET_PRODUCTS_SUMMARY, {
     variables: { first },
     fetchPolicy: "no-cache",
@@ -16,10 +17,13 @@ export function useProductsSummary(first = 100) {
   });
 
   const isDemoCatalog = shouldUseDemoCatalog(Boolean(error));
+  console.log({isDemoCatalog});
+   
   const products: Product[] = isDemoCatalog
     ? DEMO_PRODUCTS.slice(0, first)
     : data?.products?.products ?? [];
 
+  
   return {
     products,
     loading: isDemoCatalog ? false : loading,

@@ -100,7 +100,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             </span>
             <input
               type="text"
-              placeholder={placeholder}
+              // placeholder={placeholder}
               className="w-full py-2.5 pl-10 pr-12 bg-white rounded-full text-gray-800 placeholder-gray-600 border-2 border-gray-200
                focus:border-secondary focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm transition-all duration-200 hover:border-gray-300"
               {...register("searchQuery")}
