@@ -62,6 +62,8 @@ export const createApp = async () => {
   app.use(cookieParser(process.env.COOKIE_SECRET, cookieParserOptions));
 
   app.set("trust proxy", 1);
+  
+  
   app.use(
     session({
       store: new RedisStore({ client: redisClient }),
@@ -77,6 +79,8 @@ export const createApp = async () => {
       },
     })
   );
+  // console.log(ee);
+  
   app.use(passport.initialize());
   app.use(passport.session());
   configurePassport();

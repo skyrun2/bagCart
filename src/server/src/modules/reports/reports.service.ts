@@ -11,7 +11,7 @@ import {
 import { PrismaClient } from "@prisma/client";
 
 export class ReportsService {
-  private prisma: PrismaClient;
+  private prisma: PrismaClient; 
 
   constructor(
     private reportsRepository: ReportsRepository,
@@ -21,6 +21,7 @@ export class ReportsService {
     this.prisma = new PrismaClient();
   }
 
+  
   async generateSalesReport(query: DateRangeQuery): Promise<SalesReport> {
     const { timePeriod, year, startDate, endDate } = query;
     const cacheKey = `reports:sales:${timePeriod}:${year || "all"}:${
